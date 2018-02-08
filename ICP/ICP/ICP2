@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html ng-app="weather" ng-controller="weatherctrler">
+    <head>
+        <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>  -->
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+        <script>
+            angular.module('weather', [])
+                .controller('weatherctrler', function($scope, $http) {
+                    $scope.getWeather = function () {
+                        $http.get('https://api.wunderground.com/api/fc672afc72b2d31d/conditions/q/' +
+                            $scope.StateName + '/' + $scope.CityName + '.json').success(function (data) {
+                            console.log(data);
+                            temp = data.current_observation.temp_f;
+                           // weather = data.current_observation.weather;
+                            wind = data.current_observation.wind_string;
+                            pressure=data.current_observation.pressure_mb;
+                            humidity=data.current_observation.relative_humidity;
+                            console.log(temp);
+                            $scope.currentweather = {
+                               // html: "Current Weather Conditions at " + $scope.CityName + ": Temp -> " + temp +
+                               // " degrees; with " + weather + " weather conditions; " + " and wind status is -> " + wind +  ""
+                                html: "Current Weather Conditions at " + $scope.CityName + ": Temp -> " + temp +
+                                 " degrees; wind status is -> " + wind +" ; pressure -> "+pressure+" ; humidity -> "+humidity+""
+                               }
+                            $scope.currentIcon = {
+                                html: "<img src='" + icon + "'/>"
+                            }
+                        })
+                    }
+                });
+        </script>
+    </head>
+    <body>
+    <div>
+        <p>Hello world! This is my First Web Page for Weather Enquiry.</p>
+        <label>State Name: </label><br>
+        <input type="text" ng-model="StateName" placeholder="Enter a State's Name" ><br>
+        <label>City Name: </label><br>
+        <input type="text" ng-model="CityName" placeholder="Enter a City's Name" >
+        <button id="btn" ng-click="getWeather()"> Get Weather </button>
+        <!-- <button id="btn" ng-click="getWeather()"> Display Weather </button> -->
+        <h1>{{currentweather.html}}</h1>
+     </div>
+     </body>
+ </html>

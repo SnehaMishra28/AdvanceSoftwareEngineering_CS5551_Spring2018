@@ -1,0 +1,1 @@
+Testing “Add file to local Repository”.

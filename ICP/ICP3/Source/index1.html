@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="mashup">
+<head>
+    <meta charset="UTF-8">
+    <title>ICP 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js" type="application/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        angular.module('mashup',[]).controller('recipeSpeech', function($scope, $http)
+        {
+            $scope.recipeSearch = function()
+            {
+                var recipeBox = $scope.food;
+                console.log(recipeBox);
+                var recipe = recipeBox;
+               // var url = 'https://api.edamam.com/api/nutrition-data?app_id=d896e0e6&app_key=a15d1a25d2ce745c28eca08deddaa408&ingr='
+                var url = 'https://api.edamam.com/api/nutrition-data?app_id=d896e0e6&app_key=a15d1a25d2ce745c28eca08deddaa408&from=0&to=2&ingr='+recipe;
+                if(recipe != "")
+                {
+                    $http.get(url).success(function(data){
+                        var calories = data.calories;
+                        var weight = data.totalWeight;
+                        $scope.result = {
+                            display: "Calories: " + calories +'\n'+"\nWeight: " + weight
+                        }
+                    })
+                }
+                else{
+                    alert('Enter valid text!')
+                }
+            }
+            /*$scope.textSpeech = function()
+            {
+                var recipeBox = $scope.food;
+                console.log(recipeBox);
+                var recipe = recipeBox;
+                //var recipeBox = document.getElementById("txt_rec");
+               // var url = 'https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize?username=b234d9a3-d86a-4476-9c56-07173e317489&password=0pmyS3pDPqUv&text='
+                var url = 'https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize?username=69332d26-2f6a-4246-8185-b0e1c380afd7&password=4zqUdnwyAbei&text='+recipe;
+                if(recipe != "")
+                {
+                    $scope.speech = {
+                        display: "<audio controls>" +
+                        "  <source src=" + url + " type=\"audio/wav\">" +
+                        "</audio>"
+                    }
+                }
+                else{
+                    alert('Enter valid text!')
+                }
+            }*/
+        });
+
+
+        /*$(function(){
+if ('speechSynthesis' in window) {
+speechSynthesis.onvoiceschanged = function() {
+var $voicelist = $('#voices');
+
+if($voicelist.find('option').length == 0) {
+speechSynthesis.getVoices().forEach(function(voice, index) {
+var $option = $('<option>')
+    .val(index)
+    .html(voice.name + (voice.default ? ' (default)' :''));
+
+    $voicelist.append($option);
+    });
+
+    $voicelist.material_select();
+    }
+    }
+
+    $('#speak').click(function(){
+    var text = $('#message').val();
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[$('#voices').val()];
+    msg.rate = $('#rate').val() / 10;
+    msg.pitch = $('#pitch').val();
+    msg.text = text;
+
+    msg.onend = function(e) {
+    console.log('Finished in ' + event.elapsedTime + ' seconds.');
+    };
+
+    speechSynthesis.speak(msg);
+    })
+    } else {
+    $('#modal1').openModal();
+    }
+    });*/
+
+    </script>
+</head>
+<body ng-controller="recipeSpeech">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            Enter Item to Learn its Nutrition:
+            <input type="text" id="txt_rec" ng-model="food">
+            <!-- <input type="button" id="btn_search" ng-click="recipeSearch(); textSpeech()" value="Search"> -->
+            <button id="btn" ng-click="recipeSearch()" >Get Nutrition</button>
+            <p>{{result.display}} </p>
+            <br>
+            <p>{{speech.display}} </p>
+         </div>
+     </div>
+ </div>
+ </body>
+ </html>
+
+
+

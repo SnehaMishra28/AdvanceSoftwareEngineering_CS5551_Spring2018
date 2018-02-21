@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "134354856426",
+    "project_id": "scenic-bolt-195904"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134354856426:android:4786365b5f785e15",
+        "android_client_info": {
+          "package_name": "com.example.snehamishra.auth2login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134354856426-2hriuvpr1a1k15fkifevtcj44v6q66ck.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "134354856426-ddg8neialp17enu7o0tin2b9405ht4ee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snehamishra.auth2login",
+            "certificate_hash": "2e60c22fdee7869644cbaf8e3548866f64a0c2b6"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi98Fqyt7n3AtMDJj9jMkze54qnjuFKSs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

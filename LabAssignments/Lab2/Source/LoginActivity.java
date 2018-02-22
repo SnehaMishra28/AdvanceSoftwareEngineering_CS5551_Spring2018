@@ -23,7 +23,7 @@ import com.google.android.gms.common.api.Status;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener{
 
     private LinearLayout prof_Section;
-    private Button signOut;
+    private Button signOut,navigateHome;
     private SignInButton signIn;
     private TextView Name, Email;
     private ImageView prof_pic;
@@ -36,13 +36,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         prof_Section = (LinearLayout)findViewById(R.id.prof_section);
-        signOut = (Button)findViewById(R.id.bn_logout);
+        signOut = (Button)findViewById(R.id.bn_back);
+        navigateHome = (Button)findViewById(R.id.bn_home);
         signIn = (SignInButton)findViewById(R.id.bn_login);
         Name = (TextView)findViewById(R.id.name);
         Email = (TextView)findViewById(R.id.email);
         prof_pic = (ImageView)findViewById(R.id.prof_pic);
         signIn.setOnClickListener(this);
         signOut.setOnClickListener(this);
+        navigateHome.setOnClickListener(this);
         prof_Section.setVisibility(View.GONE);
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
@@ -58,8 +60,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 signIn();
                 break;
 
-            case R.id.bn_logout:
+            case R.id.bn_back:
                 signOut();
+                break;
+            case R.id.bn_home:
+                loadHomePage();
                 break;
         }
 
@@ -122,6 +127,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             signIn.setVisibility(View.VISIBLE);
 
         }
+    }
+
+    private void loadHomePage()
+    {
+        Intent intent = new Intent(this, TabbedHomeScreen.class);
+        startActivity(intent);
     }
 
     @Override

@@ -51,7 +51,13 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Logout Account"
-               android:id="@+id/bn_logout"/>
+               android:id="@+id/bn_back"/>
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="HOME"
+               android:id="@+id/bn_home"/>
 
        </LinearLayout>
 

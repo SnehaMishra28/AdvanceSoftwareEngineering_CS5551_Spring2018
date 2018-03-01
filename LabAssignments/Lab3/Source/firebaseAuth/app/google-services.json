@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "725345144197",
+    "firebase_url": "https://androidauth-ase-lab3.firebaseio.com",
+    "project_id": "androidauth-ase-lab3",
+    "storage_bucket": "androidauth-ase-lab3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725345144197:android:16dc3261a5c68f73",
+        "android_client_info": {
+          "package_name": "com.example.snehamishra.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725345144197-hm6erg608sd2740oh11ku9lrtu2h4ncg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snehamishra.firebaseauth",
+            "certificate_hash": "2e60c22fdee7869644cbaf8e3548866f64a0c2b6"
+          }
+        },
+        {
+          "client_id": "725345144197-idl7f6jqrl29efmealnve3md85o120hm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg_dsB1CvIgyWgnSOgAXtQ3wbm8X-0y8s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725345144197-idl7f6jqrl29efmealnve3md85o120hm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

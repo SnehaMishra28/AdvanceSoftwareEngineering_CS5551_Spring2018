@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.snehamishra.imagerecognition.ImageActivity">
+
+    <Button
+        android:id="@+id/capture_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/backActivityTextView"
+        android:layout_alignStart="@+id/backActivityTextView"
+        android:layout_below="@+id/backActivityTextView"
+        android:layout_marginTop="43dp"
+        android:text="Capture Image"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/select_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/capture_btn"
+        android:layout_alignBottom="@+id/capture_btn"
+        android:layout_alignLeft="@+id/shop_btn"
+        android:layout_alignStart="@+id/shop_btn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:text="Select Image"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/backActivityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="39dp"
+        android:text="Back" />
+
+    <TextView
+        android:id="@+id/skipActivityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/capture_btn"
+        android:layout_alignEnd="@+id/select_btn"
+        android:layout_alignRight="@+id/select_btn"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:text="Skip" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/analyze_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/shop_btn"
+        android:layout_alignBottom="@+id/shop_btn"
+        android:layout_alignLeft="@+id/imageDescriptionTextView"
+        android:layout_alignStart="@+id/imageDescriptionTextView"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="Analyze Image" />
+
+
+    <Button
+        android:id="@+id/shop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="11dp"
+        android:text="Shop Using Image" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageDescriptionTextView"
+        android:text="Description"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="450dp"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

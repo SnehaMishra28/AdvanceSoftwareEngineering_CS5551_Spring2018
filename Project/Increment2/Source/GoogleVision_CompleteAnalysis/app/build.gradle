@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.snehamishra.googlevision"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+
+    packagingOptions {
+
+        exclude 'project.properties'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/project.properties'
+        //exclude 'META-INF/project.properties'
+        exclude 'META-INF/DEPENDENCIES'
+        //exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        //exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        //exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile 'com.google.api-client:google-api-client-android:1.20.0' exclude module: 'httpclient'
+    compile 'com.google.http-client:google-http-client-gson:1.20.0' exclude module: 'httpclient'
+
+    compile 'com.google.apis:google-api-services-vision:v1-rev2-1.21.0' exclude module: 'httpclient'
+
+    //add libraries
+    compile 'com.google.cloud:google-cloud-vision:1.14.0'
+}

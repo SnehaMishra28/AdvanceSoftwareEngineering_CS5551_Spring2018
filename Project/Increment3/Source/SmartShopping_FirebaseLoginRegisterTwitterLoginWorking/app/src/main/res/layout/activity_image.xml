@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.snehamishra.smartshopping.ImageActivity">
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/imageAnaShop_btn"
+        android:layout_toStartOf="@+id/imageAnaShop_btn"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/imageBackTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/userNameTextView"
+        android:layout_marginLeft="62dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="31dp"
+        android:text="Back" />
+
+    <TextView
+        android:id="@+id/imageSkipTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageBackTV"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="Skip" />
+
+    <Button
+        android:id="@+id/imageCamera_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageBackTV"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="19dp"
+        android:layout_toLeftOf="@+id/imageAnaShop_btn"
+        android:layout_toStartOf="@+id/imageAnaShop_btn"
+        android:text="Take Picture" />
+
+    <Button
+        android:id="@+id/imageGallery_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageSkipTV"
+        android:layout_alignRight="@+id/imageSkipTV"
+        android:layout_alignTop="@+id/imageCamera_btn"
+        android:text="Use Gallery" />
+
+    <ImageView
+        android:id="@+id/imageDisplayView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/imageCamera_btn"
+        android:layout_toLeftOf="@+id/imageSkipTV"
+        android:layout_toStartOf="@+id/imageSkipTV"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <Button
+        android:id="@+id/imageAnalyze_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageCamera_btn"
+        android:layout_alignStart="@+id/imageCamera_btn"
+        android:layout_below="@+id/imageDisplayView"
+        android:text="Analyze Image" />
+
+    <Button
+        android:id="@+id/imageAnaShop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/imageAnalyze_btn"
+        android:layout_alignBottom="@+id/imageAnalyze_btn"
+        android:layout_alignLeft="@+id/imageGallery_btn"
+        android:layout_alignStart="@+id/imageGallery_btn"
+        android:text="Shop using Analysis" />
+
+    <TextView
+        android:id="@+id/imageAnalysisDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageAnalyze_btn"
+        android:layout_alignStart="@+id/imageAnalyze_btn"
+        android:layout_below="@+id/imageAnalyze_btn"
+        android:layout_marginTop="32dp"
+        android:text="Analysis Description" />
+</RelativeLayout>

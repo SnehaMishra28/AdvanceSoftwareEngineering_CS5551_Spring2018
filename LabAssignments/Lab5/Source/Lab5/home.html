@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Report!!!!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="home.js"></script>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div ng-app="weatherapp" ng-controller="WeatherCntrl">
+
+    <h1>Welcome to the Weather Application</h1>
+
+    <div class="form-group">
+        <label for="state">State Code:</label>
+        <input type="text" class="form-control" id="state">
+    </div>
+    <div class="form-group">
+        <label for="city">City Name:</label>
+        <input type="text" class="form-control" id="city">
+    </div>
+    <br >
+    <br>
+
+    <div id="weatherbtn" style="text-align: center">
+    <input type="button" data-ng-click="myfunction(my)" class="button" value="Populate the Weather">
+    </div>
+
+    <div id="output" style="text-align: center">
+    <br>
+    <p class="bg-primary" id="temp"></p>
+    <p class="bg-primary" id="press"></p>
+    <p class="bg-warning" id="weather">
+
+    </p>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+
+<style>
+
+html{
+
+    text-align: center;
+
+    background-image: url("http://blog.hostbaby.com/wp-content/uploads/2014/03/PaintSwatches_1920x1234.jpg");
+
+}
+
+h1{
+
+    overflow: hidden;
+    padding: 20px 10px;
+    color: black;
+}
+
+h1:hover{
+
+    color: gold;
+
+}
+
+
+
+.Loginbutton{
+
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.Registerbutton{
+
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+</style>
+<body>
+
+<h1>Welcome to the Weather Report Application</h1>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="buttons">
+
+<input type="button" value="Existing Users" class="Loginbutton" onclick="login()"/>
+
+<br><br>
+
+<input type="button" value="New Users" class="Registerbutton" onclick="register()"/>
+
+</div>
+
+<script>
+
+    function register() {
+        window.location='registration.html';
+    }
+
+    function login() {
+        window.location='Login.html';
+    }
+
+</script>
+
+</body>
+</html>

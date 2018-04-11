@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta t="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+
+    <style>
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+</head>
+
+<body ng-app="admin" data-ng-controller="AdminController">
+
+<h1>Admin Access Page</h1>
+
+<button id="details" ng-click="getDetails()">Get Details of Users</button>
+
+<br><br>
+
+<table id="users">
+        <tr>
+            <th>User ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Password</th>
+        </tr>
+
+</table>
+
+<br><br>
+<input type="text" placeholder="Enter User ID" id="userid">
+<br><br>
+
+
+
+<button id="delete" ng-click="delete()">Delete User</button>
+
+
+
+
+</body>
+</html>
+
+<script>
+
+    var app = angular.module("admin", [])
+    app.controller("AdminController", function ($scope, $http,$window, $httpParamSerializerJQLike) {
+        $scope.myVar = true;
+        $scope.pageClass = 'index';
+        $scope.getDetails = function () {
+            console.log("inside login function");
+            var table = document.getElementById("users")
+
+
+
+            $http({
+                method: 'GET',
+                url: 'https://api.mongolab.com/api/1/databases/aselab5/collections/ase?apiKey=lwB5jOdG6HHA-fn_2KfRkiZoOVOWdiP8'
+            }).success(function (data) {
+                var obj = angular.fromJson(data);
+                var count = 0;
+                for (i = 0; i < obj.length; i++) {
+
+                    var rowCount = table.rows.length;
+                    var row = table.insertRow(rowCount);
+
+                    row.insertCell().innerHTML = obj[i]._id.$oid;
+                    row.insertCell().innerHTML = obj[i].fname;
+                    row.insertCell().innerHTML = obj[i].lname;
+                    row.insertCell().innerHTML = obj[i].email;
+                    row.insertCell().innerHTML = obj[i].password;
+
+
+                }
+
+            })
+        }
+
+
+    $scope.delete = function() {
+        console.log("inside login function");
+        var user_id = document.getElementById("userid").value;
+        $http({
+            method: 'DELETE',
+            async: true,
+            url : 'https://api.mongolab.com/api/1/databases/aselab5/collections/ase' + user_id + '?apiKey=lwB5jOdG6HHA-fn_2KfRkiZoOVOWdiP8',
+            timeout: 300000
+        }).success(function() {
+            alert("Deleted Successfully");
+            $window.location.href = 'index.html';
+        })
+    }
+    });
+
+
+
+</script>

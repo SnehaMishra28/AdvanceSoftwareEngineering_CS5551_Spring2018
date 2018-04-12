@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "62873071228",
+    "firebase_url": "https://mysmartshoppingandroidapp.firebaseio.com",
+    "project_id": "mysmartshoppingandroidapp",
+    "storage_bucket": "mysmartshoppingandroidapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62873071228:android:8906dd032af1c98a",
+        "android_client_info": {
+          "package_name": "com.example.snehamishra.smartshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62873071228-f6juh3lib43533t0uaad2677ijn1sqev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snehamishra.smartshopping",
+            "certificate_hash": "2e60c22fdee7869644cbaf8e3548866f64a0c2b6"
+          }
+        },
+        {
+          "client_id": "62873071228-n4l5v141cnqreibptm1adbk4a6esoh8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJB1LGtgFdbAaA6mVuJxYGmgS_SaoM7E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62873071228-n4l5v141cnqreibptm1adbk4a6esoh8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62873071228:android:702e5b67941b6fff",
+        "android_client_info": {
+          "package_name": "com.example.snehamishra.smartshoppingactivities"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62873071228-o99b2j009fum1fskk6hudmcp72b82pkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snehamishra.smartshoppingactivities",
+            "certificate_hash": "2e60c22fdee7869644cbaf8e3548866f64a0c2b6"
+          }
+        },
+        {
+          "client_id": "62873071228-n4l5v141cnqreibptm1adbk4a6esoh8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJB1LGtgFdbAaA6mVuJxYGmgS_SaoM7E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62873071228-n4l5v141cnqreibptm1adbk4a6esoh8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

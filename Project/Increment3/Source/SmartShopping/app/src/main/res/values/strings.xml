@@ -2,4 +2,14 @@
     <string name="app_name">SmartShopping</string>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">09ONE8JLAGLpJyp65yfyXGDWV</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">sq273brTbTckcJUp6pTOpyCioKaDm7YoAa7wh6b0hkqeromY7O</string>
+    <string name="additional_info">More...</string>
+    <string name="search_hint">Enter your search terms</string>
+    <string name="lbl_search">Search:</string>
+    <string name="btn_search">Search</string>
+    <string name="lbl_photo_search">Search Using a Photo</string>
+    <string name="upload_photo">Upload a Photo</string>
+    <string name="take_photo">Take a Photo</string>
+    <string name="lbl_sort">Sort By:</string>
+    <string name="btn_sort">Sort</string>
+    <string name="btn_back">Back</string>
 </resources>

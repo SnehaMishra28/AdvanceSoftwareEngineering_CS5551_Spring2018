@@ -21,7 +21,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ImageActivity" />
         <activity android:name=".ShopActivity" />
-        <activity android:name=".ARActivity"></activity>
+        <activity android:name=".ARActivity" />
+        <activity android:name=".RecommendationActivity"></activity>
     </application>
 
 </manifest>

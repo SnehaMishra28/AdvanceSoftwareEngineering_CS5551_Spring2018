@@ -44,7 +44,7 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
     private Uri imageCapturedUri;
 
     private TextView uName, back, skip, description;
-    private Button camera, gallery, analyze, shop;
+    private Button camera, gallery, analyze, shop, trends;
     private ImageView imageDisplay;
 
     @Override
@@ -52,17 +52,27 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
 
-        String userName = getIntent().getStringExtra("userName");
-
         //assign the widgets to instances
         assignWidgets();
 
+        String userName = getIntent().getStringExtra("userName");
+
         //welcome user message
-        uName.setText("Welcome "+userName +" to the Image Activity Page");
+        uName.setText("Welcome "+userName +" to the Image Activity!");
 
         feature = new Feature();
         feature.setType("LABEL_DETECTION");
         feature.setMaxResults(10);
+
+        // Set on click listener to buttons
+        skip.setOnClickListener(this);
+        back.setOnClickListener(this);
+        trends.setOnClickListener(this);
+        camera.setOnClickListener(this);
+        gallery.setOnClickListener(this);
+        shop.setOnClickListener(this);
+        analyze.setOnClickListener(this);
+
     }
 
     //assign the widgets to instances
@@ -70,6 +80,7 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
         uName = findViewById(R.id.userNameTextView);
         back = findViewById(R.id.imageBackTV);
         skip = findViewById(R.id.imageSkipTV);
+        trends = findViewById(R.id.trends_btn);
         description = findViewById(R.id.imageAnalysisDescription);
         camera = findViewById(R.id.imageCamera_btn);
         gallery = findViewById(R.id.imageGallery_btn);
@@ -93,8 +104,6 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.imageCamera_btn:
                 //user navigates to Camera to click image for analysis
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, CAMERA_INTENT);
                 openCamera();
                 break;
             case R.id.imageGallery_btn:
@@ -107,8 +116,14 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.imageAnaShop_btn:
                 //user selects to analysis of the image for shopping
-                //something
+                Toast.makeText(getApplicationContext(),"Clicking shopping button!!",Toast.LENGTH_SHORT).show();
+                shopUsingAnalysis();
                 break;
+            case R.id.trends_btn:
+                startActivity(new Intent(ImageActivity.this,ARActivity.class));
+                finish();
+                break;
+
         }
     }
 
@@ -148,9 +163,24 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
             }
 
         }else {
-            Toast.makeText(getApplicationContext(),"Unable to load Image!!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Unable to load Image!!",Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+
+    //user can choose the image analysis for shopping
+    private void shopUsingAnalysis(){
+        if(description==null || description.getText()==""){
+            Toast.makeText(getApplicationContext(),"No Analysis available to use for shopping :(",Toast.LENGTH_LONG).show();
+        }else {
+            String analysis = description.getText().toString();
+            Toast.makeText(getApplicationContext(),"Sending analysis text - "+analysis,Toast.LENGTH_SHORT).show();
+           /* Intent i = new Intent(ImageActivity.this, ShopActivity.class);
+            i.putExtra("Analysis",analysis);
+            startActivity(i); */
+            startActivity(new Intent(ImageActivity.this, ShopActivity.class));
+        }
     }
 
     private void callGoogleVision(){

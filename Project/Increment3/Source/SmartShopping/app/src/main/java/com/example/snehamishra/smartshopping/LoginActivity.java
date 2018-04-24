@@ -122,6 +122,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //on successful login user is navigated to image activity
                    // startActivity(new Intent(LoginActivity.this,ImageActivity.class));
                     Intent intent = new Intent(LoginActivity.this, ImageActivity.class);
+                    intent.putExtra("userName", userName.getText().toString().trim());
                     // so when the user press back button from the Image Activity, it wont come to Login activity
                     // clears all the activity on top of stack
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

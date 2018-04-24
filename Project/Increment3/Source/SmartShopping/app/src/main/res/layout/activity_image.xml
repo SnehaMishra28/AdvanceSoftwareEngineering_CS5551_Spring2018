@@ -8,12 +8,10 @@
 
     <TextView
         android:id="@+id/userNameTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp"
-        android:layout_toLeftOf="@+id/imageAnaShop_btn"
-        android:layout_toStartOf="@+id/imageAnaShop_btn"
         android:text="" />
 
     <TextView
@@ -97,4 +95,14 @@
         android:layout_below="@+id/imageAnalyze_btn"
         android:layout_marginTop="32dp"
         android:text="Analysis Description" />
+
+    <Button
+        android:id="@+id/trends_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/imageAnalysisDescription"
+        android:layout_alignBottom="@+id/imageAnalysisDescription"
+        android:layout_alignEnd="@+id/imageGallery_btn"
+        android:layout_alignRight="@+id/imageGallery_btn"
+        android:text="Trends" />
 </RelativeLayout>

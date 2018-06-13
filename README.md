@@ -1,2 +1,2 @@
-# AdvanceSoftwareEngineering_CS5551_Spring2018
-AdvanceSoftwareEngineering (CS5551) Spring2018
+# AdvancedSoftwareEngineering_CS5551_Spring2018
+Advanced Software Engineering (CS5551) Spring2018
